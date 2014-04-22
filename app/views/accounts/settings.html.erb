@@ -92,7 +92,7 @@
                 <%= f.select :default_locale, [[no_language, nil]] + available_locales.invert.sort, {:selected => @context.default_locale}, {:class => 'locale'} %>
                 <%= render :partial => 'shared/locale_warning' %>
                 <p class="unbreakable"><%= mt :transifex_message, <<-TEXT, :transifex_url => "https://www.transifex.com/projects/p/canvas-lms/"
-Join the [Canvas Translation Community](%{transifex_url})
+Join the [LMS Translation Community](%{transifex_url})
 TEXT
                 %>
                 </p>
@@ -259,7 +259,7 @@ TEXT
                 <% if @account.account_authorization_config %>
                   <div>
                     <%= settings.check_box :canvas_authentication, :checked => @account.canvas_authentication? %>
-                    <%= settings.label :canvas_authentication, :en => "Canvas Authentication" %>
+                    <%= settings.label :canvas_authentication, :en => "LMS Authentication" %>
                   </div>
                 <% end %>
               <% end %>
@@ -477,7 +477,7 @@ TEXT
                   "In order to make it easier for users, rather than forcing them to download " +
                   "things like Word docs, PDFs, Excel spreadsheets, and open office documents " +
                   "(In addition to requiring that those programs be installed on their on their " +
-                  "computer), in many areas throughout Canvas, it will allow you an inline " +
+                  "computer), in many areas throughout LMS, it will allow you an inline " +
                   "preview of the document.\n\n" +
 
                   "If Scribd has been enabled for this account, it will try to use it to show the preview. " +
@@ -529,13 +529,13 @@ TEXT
 
         <% if @account.root_account? && !@account.site_admin? %>
           <h2><%= t(:email_notification_from_settings, 'E-mail Notification "From" Settings') %></h2>
-          <p><%= t(:email_notification_from_description, "This setting allows the Admin to brand or label the 'From' text on all notifications sent from Canvas for this Account.") %></p>
+          <p><%= t(:email_notification_from_description, "This setting allows the Admin to brand or label the 'From' text on all notifications sent from LMS for this Account.") %></p>
           <%= f.fields_for :settings do |settings| %>
             <div>
               <%= settings.radio_button :outgoing_email_default_name_option, 'default',
                                         :checked => @account.settings[:outgoing_email_default_name].blank?,
                                         :class => 'notification_from_name_option' %>
-              <%= settings.label :outgoing_email_default_name_option_default, :en => "Default Canvas Setting" %>
+              <%= settings.label :outgoing_email_default_name_option_default, :en => "Default LMS Setting" %>
             </div>
             <div style='padding-left: 2em;'>
               <strong><%= t 'notifications.example', 'Example:' %></strong>
@@ -543,7 +543,7 @@ TEXT
                 <table class="formtable" style='margin-left: 1.5em;'>
                 <tr>
                   <td><%= t 'notifications.from', 'From' %></td>
-                  <td><%= HostUrl.outgoing_email_default_name %> <%= '<notifications@instructure.com>' %></td>
+                  <td><%= HostUrl.outgoing_email_default_name %> <%= '<notifications@hoodemo.com>' %></td>
                 </tr>
                 <tr>
                   <td><%= t 'notifications.subject', 'Subject' %></td>
@@ -555,11 +555,11 @@ TEXT
                 </tr>
                 <tr>
                   <td><%= t 'notifications.email_to', 'To' %></td>
-                  <td><%= 'recipient@instructure.com' %></td>
+                  <td><%= 'recipient@hoodemo.com' %></td>
                 </tr>
                 <tr>
                   <td><%= t 'notifications.email_reply_to', 'Reply-To' %></td>
-                  <td><%= 'notifications+e79df3ljk09s3jkl09ssljk3lkj2l-10191633@instructure.com' %></td>
+                  <td><%= 'notifications+e79df3ljk09s3jkl09ssljk3lkj2l-10191633@hoodemo.com' %></td>
                 </tr>
               </table>
               </blockquote>
@@ -572,7 +572,7 @@ TEXT
             </div>
             <div style='padding-left: 2em;'>
               <p>
-                <%= t('notifications.custom_name_description', 'If selected, this will replace all other branding sent in Canvas notifications.') %>
+                <%= t('notifications.custom_name_description', 'If selected, this will replace all other branding sent in LMS notifications.') %>
                 <br/>
                 <%= text_field_tag 'account[settings][outgoing_email_default_name]', @account.settings[:outgoing_email_default_name] %>
               </p>
@@ -583,7 +583,7 @@ TEXT
               <table class="formtable" style='margin-left: 1.5em;'>
                 <tr>
                   <td><%= t 'notifications.from', 'From' %></td>
-                  <td><strong id='custom_default_name_display'></strong> <%= '<notifications@instructure.com>' %></td>
+                  <td><strong id='custom_default_name_display'></strong> <%= '<notifications@hoodemo.com>' %></td>
                 </tr>
                 <tr>
                   <td><%= t 'notifications.subject', 'Subject' %></td>
@@ -595,11 +595,11 @@ TEXT
                 </tr>
                 <tr>
                   <td><%= t 'notifications.email_to', 'To' %></td>
-                  <td><%= 'recipient@instructure.com' %></td>
+                  <td><%= 'recipient@hoodemo.com' %></td>
                 </tr>
                 <tr>
                   <td><%= t 'notifications.email_reply_to', 'Reply-To' %></td>
-                  <td><%= 'notifications+e79df3ljk09s3jkl09ssljk3lkj2l-10191633@instructure.com' %></td>
+                  <td><%= 'notifications+e79df3ljk09s3jkl09ssljk3lkj2l-10191633@hoodemo.com' %></td>
                 </tr>
               </table>
               </blockquote>
@@ -620,7 +620,7 @@ TEXT
               <tr>
                 <td>
                   <b><%= t('notifications.external_services_warning_label', 'Pop-up Message Content:') %></b>
-                  <blockquote><%= t('notifications.external_services_warning', 'Notice: Some notifications may contain confidential information. Selecting to receive notifications at an email other than your institution provided address may result in sending sensitive Canvas course and group information outside of the institutional system.')%></blockquote>
+                  <blockquote><%= t('notifications.external_services_warning', 'Notice: Some notifications may contain confidential information. Selecting to receive notifications at an email other than your institution provided address may result in sending sensitive LMS course and group information outside of the institutional system.')%></blockquote>
                 </td>
               </tr>
             </table>
@@ -758,7 +758,7 @@ TEXT
             </tr>
             <% if @account.site_admin? %>
               <tr id="confirm_global_announcement_field">
-                <td colspan=2><input type="checkbox" id="confirm_global_announcement" name="confirm_global_announcement"> <%= label_tag :confirm_global_announcement, t(:confirm_global_announcement, "This announcement will be shown to *all* Canvas users. Confirm that you want to create it.", :wrapper => '<b>\1</b>') %></td>
+                <td colspan=2><input type="checkbox" id="confirm_global_announcement" name="confirm_global_announcement"> <%= label_tag :confirm_global_announcement, t(:confirm_global_announcement, "This announcement will be shown to *all* LMS users. Confirm that you want to create it.", :wrapper => '<b>\1</b>') %></td>
               </tr>
               <tr>
                 <td colspan=2>

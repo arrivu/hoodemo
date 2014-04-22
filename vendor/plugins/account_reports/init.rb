@@ -28,7 +28,7 @@ Rails.configuration.to_prepare do
       :parameters => {
         :enrollment_term_id => {
           :required => false,
-          :description => 'The canvas id of the term to get grades from'
+          :description => 'The LMS id of the term to get grades from'
         },
         :include_deleted => {
           :required => false,
@@ -43,7 +43,7 @@ Rails.configuration.to_prepare do
       :parameters => {
         :enrollment_term_id => {
           :required => false,
-          :description => 'The canvas id of the term to get grades from'
+          :description => 'The LMS id of the term to get grades from'
         },
         :course_id => {
           :required => false,
@@ -58,7 +58,7 @@ Rails.configuration.to_prepare do
       :parameters => {
         :enrollment_term_id => {
           :required => false,
-          :description => 'The canvas id of the term of courses to report on'
+          :description => 'The LMS id of the term of courses to report on'
         },
         :order => {
           :required => false,
@@ -77,7 +77,7 @@ Rails.configuration.to_prepare do
       :parameters => {
         :enrollment_term_id => {
           :required => false,
-          :description => 'The canvas id of the term of courses to report on'
+          :description => 'The LMS id of the term of courses to report on'
         },
         :users => {
           :description => 'Get the Provisioning file for users'
@@ -118,7 +118,7 @@ Rails.configuration.to_prepare do
       :parameters => {
         :enrollment_term_id => {
           :required => false,
-          :description => 'The canvas id of the term to get grades from'
+          :description => 'The LMS id of the term to get grades from'
         }
       }
     },
@@ -129,7 +129,7 @@ Rails.configuration.to_prepare do
       :parameters => {
         :enrollment_term_id => {
           :required => false,
-          :description => 'The canvas id of the term of courses to report on'
+          :description => 'The LMS id of the term of courses to report on'
         },
         :users => {
           :description => 'Get the SIS file for users'
@@ -170,7 +170,7 @@ Rails.configuration.to_prepare do
       :parameters => {
         :enrollment_term_id => {
           :required => false,
-          :description => 'The canvas id of the term of courses to report on'
+          :description => 'The LMS id of the term of courses to report on'
         },
         :include_deleted => {
           :required => false,
@@ -216,7 +216,7 @@ Rails.configuration.to_prepare do
       :parameters => {
         :enrollment_term_id => {
           :required => false,
-          :description => 'The canvas id of the term to get grades from'
+          :description => 'The LMS id of the term to get grades from'
         }
       }
     },
@@ -227,7 +227,7 @@ Rails.configuration.to_prepare do
       :parameters => {
         :enrollment_term_id => {
           :required => false,
-          :description => 'The canvas id of the term to get courses from'
+          :description => 'The LMS id of the term to get courses from'
         }
       }
     },
@@ -238,7 +238,7 @@ Rails.configuration.to_prepare do
       :parameters => {
         :enrollment_term_id => {
           :required => false,
-          :description => 'The canvas id of the term to get grades from'
+          :description => 'The LMS id of the term to get grades from'
         },
         :start_at => {
           :required => false,

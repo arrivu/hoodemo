@@ -7,10 +7,10 @@ Set the following configuration options to ensure your Facebook app
 works correctly:
 
 * **Web Site -- Site URL:** set to %{site_url}
-* **Web Site -- Site Domain:** domain of your main Canvas site.  This must match the Site URL setting
-* **Facebook Integration -- Canvas Page:** make a note of whatever you choose and enter in the form below
-* **Facebook Integration -- Canvas URL:** set to %{canvas_url}
-* Make sure **Advanced -- OAuth 2.0 for Canvas** is enabled
+* **Web Site -- Site Domain:** domain of your main LMS site.  This must match the Site URL setting
+* **Facebook Integration -- LMS Page:** make a note of whatever you choose and enter in the form below
+* **Facebook Integration -- LMS URL:** set to %{canvas_url}
+* Make sure **Advanced -- OAuth 2.0 for LMS ** is enabled
 * After you save your app, make a note of the App ID, API Key and App Secret
 TEXT
       %></td>
@@ -39,17 +39,17 @@ TEXT
       </td>
     </tr>
     <tr>
-      <td><%= f.blabel :canvas_name, :en => "Canvas Name" %></td>
+      <td><%= f.blabel :canvas_name, :en => "LMS Name" %></td>
       <td>
         <%= f.text_field :canvas_name %>
-        <div class="hint"><%= t('hints.canvas_name', 'this is the path specified in "Canvas Page"') %></div>
+        <div class="hint"><%= t('hints.canvas_name', 'this is the path specified in "LMS Page"') %></div>
       </td>
     </tr>
     <tr>
-      <td><%= f.blabel :canvas_domain, :en => "Canvas Domain" %></td>
+      <td><%= f.blabel :canvas_domain, :en => "LMS Domain" %></td>
       <td>
         <%= f.text_field :canvas_domain %>
-        <div class="hint"><%= t('hints.canvas_domain', 'this is the domain specified in "Canvas URL"') %></div>
+        <div class="hint"><%= t('hints.canvas_domain', 'this is the domain specified in "LMS URL"') %></div>
       </td>
     </tr>
     <tr>
